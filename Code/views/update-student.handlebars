@@ -1,0 +1,17 @@
+<html>
+<h1>Update {{student.number}} :</h1>
+<form id="update-student" action="/students" method="post">
+    number: <input type="number" name="number" value="{{student.number}}"><br><br>
+    program: <select name="programCode" id="program-selector"> 
+        {{#each programs}}
+        <option value="{{programCode}}">{{name}}</option>
+        {{/each}}
+    </select><br><br>
+    <input type="checkbox" name="isInternational" value="1"> is international student? <br><br>
+    College ID: <input type="number" name="collegeId" value="{{student.collegeId}}"><br><br>
+    Balance: <input type="number" name="balance" value="{{student.balance}}"><br><br>
+</form>
+<button onclick="updateStudent({{student.number}})">Update</button>
+<script defer>selectProgram("{{student.programCode}}");</script>
+</html>
+

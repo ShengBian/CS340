@@ -1,0 +1,37 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<h3>Add new payment:</h3>
+<form id="addpayment" action="/payments" method="post">
+    Student Number: <input type="number" name="studentNumber"><br><br>
+    Invoice Number: <input type="number" name="invoiceNumber"><br><br>
+    Transaction Date: <input type="date" name="transactionDate"><br><br>
+    Amount: <input type="number" name="amount"><br><br>
+    <input type="submit" value="Submit">
+ </form>
+<br/>
+<h3>Current payments:</h3>
+<table>
+    <thead> 
+        <th>ID</th> 
+        <th>Student Number</th> 
+        <th>Invoice Number</th> 
+        <th>Transaction Date</th>
+        <th>Amount</th>  
+    </thead> 
+    <tbody> 
+        {{#each payments}} 
+        <tr> 
+            <td>{{id}}</td>
+            <td>{{studentNumber}}</td> 
+            <td>{{invoiceNumber}}</td> 
+            <td>{{transactionDate}}</td> 
+            <td>{{amount}}</td>
+            <td><button onclick="deletePayment({{id}})">Delete</button></td>
+            <td><a href="/payments/{{id}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>

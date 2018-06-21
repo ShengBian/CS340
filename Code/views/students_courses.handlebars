@@ -1,0 +1,42 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<div>
+<h3> Add Courses for Students </h3>
+    <form id="add_students_courses" action="/students_courses" method="post">
+    Student: <select name='studentNumber'>
+        {{#each people}}
+          <option value='{{number}}'>{{firstName}} {{lastName}}</option>
+        {{/each}}
+    </select>
+    <br>
+    Courses:<sup>Multi-select</sup> <select multiple name="courses"> 
+        {{#each courses}}
+        <option value="{{courseCode}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    <input type="submit" value="Submit">
+    </form>
+</div>
+<br/>
+<h3> List of Students with their Courses </h3>
+<table>
+    <thead> 
+        <th>Name</th> 
+        <th>Course</th> 
+    </thead> 
+    <tbody> 
+        {{#each students_with_courses}} 
+        <tr> 
+            <td>{{studentName}}</td> 
+            <td>{{courseName}}</td> 
+            <td><button onclick="deleteStudentCourse({{studentNumber}},'{{courseCode}}')">Delete</button></td>
+           
+        </tr>
+        {{else}}
+        <b> No student taking any courses! </b>
+        {{/each}} 
+    </tbody>
+</table> 
+</html>

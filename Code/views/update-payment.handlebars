@@ -1,0 +1,10 @@
+<html>
+<h1>Update Payment {{payment.id}} :</h1>
+<form id="update-payment" action="/payments" method="post">
+    Student Number:  <input type="number" name="studentNumber" value="{{payment.studentNumber}}"><br><br>
+    Invoice Number: <input type="number" name="invoiceNumber" value="{{payment.invoiceNumber}}"><br><br>
+    Transaction Date: <input type="date" name="transactionDate" value="{{payment.transactionDate}}"><br><br>
+    Amount: <input type="number" name="amount" value="{{payment.amount}}"><br><br>
+</form>
+<button onclick="updatePayment({{payment.id}})">Update</button>
+</html>

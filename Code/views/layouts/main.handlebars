@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<title>Student Information System</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    {{#each jsscripts}}
+    <script src="/static/{{this}}"></script>
+    {{/each}}
+    <style>
+        body {
+            max-width: 800px;
+            margin: auto;
+        }
+
+
+        table, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+	{{{body}}}
+</body>
+</html>

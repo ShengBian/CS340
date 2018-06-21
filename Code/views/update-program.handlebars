@@ -1,0 +1,9 @@
+<html>
+<h1>Update Program {{program.name}} :</h1>
+<form id="update-program" action="/programs" method="post">
+    Program Code: <input type="text" name="programCode" value="{{program.programCode}}"><br><br>
+    Program Name: <input type="text" name="name" value="{{program.name}}"><br><br>
+    College: <input type="text" name="college" value="{{program.college}}"><br><br>
+</form>
+<button onclick="updateProgram('{{program.programCode}}')">Update</button>
+</html>

@@ -1,0 +1,35 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<h3>Add new course:</h3>
+<form id="addcourse" action="/courses" method="post">
+    courseCode: <input type="test" name="courseCode"><br><br>
+    name: <input type="text" name="name"><br><br>
+    hours: <input type="number" name="hours"><br><br>
+    credits: <input type="number" name="credits"><br><br>
+    <input type="submit" value="Submit">
+ </form>
+<br/>
+<h3>Current courses:</h3>
+<table>
+    <thead> 
+        <th>Course Code</th> 
+        <th>Course Name</th> 
+        <th>Hours</th>
+        <th>Credits</th>  
+    </thead> 
+    <tbody> 
+        {{#each courses}} 
+        <tr> 
+            <td>{{courseCode}}</td> 
+            <td>{{name}}</td> 
+            <td>{{hours}}</td> 
+            <td>{{credits}}</td>
+            <td><button onclick="deleteCourse('{{courseCode}}')">Delete</button></td>
+            <td><a href="/courses/{{courseCode}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>

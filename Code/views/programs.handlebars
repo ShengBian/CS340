@@ -1,0 +1,32 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<h3>Add new program:</h3>
+<form id="addprogram" action="/programs" method="post">
+    Program Code: <input type="text" name="programCode"><br><br>
+    Program Name: <input type="text" name="name"><br><br>
+    College: <input type="text" name="college"><br><br>
+    <input type="submit" value="Submit">
+ </form>
+<br/>
+<h3>Current program:</h3>
+<table>
+    <thead> 
+        <th>Program Code</th> 
+        <th>Program Name</th> 
+        <th>College</th> 
+    </thead> 
+    <tbody> 
+        {{#each programs}} 
+        <tr> 
+            <td>{{programCode}}</td> 
+            <td>{{name}}</td> 
+            <td>{{college}}</td> 
+            <td><button onclick="deleteProgram('{{programCode}}')">Delete</button></td>
+            <td><a href="/programs/{{programCode}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>

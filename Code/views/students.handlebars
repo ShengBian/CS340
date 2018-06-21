@@ -1,0 +1,42 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<h3>Add new Student:</h3>
+<form id="addstudent" action="/students" method="post">
+    number: <input type="number" name="number"><br><br>
+    program: <select name="programCode"> 
+        {{#each programs}}
+        <option value="{{programCode}}">{{name}}</option>
+        {{/each}}
+    </select><br><br>
+    <input type="checkbox" name="isInternational" value="1"> is international student? <br><br>
+    College ID: <input type="number" name="collegeId"><br><br>
+    balance: <input type="number" name="balance"><br><br>
+    <input type="submit" value="Submit">
+ </form>
+<br/>
+<h3>Current Students:</h3>
+<table>
+    <thead> 
+        <th>number</th> 
+        <th>program name</th> 
+        <th>is international student</th>
+        <th>college ID</th> 
+        <th>balance</th>  
+    </thead> 
+    <tbody> 
+        {{#each students}} 
+        <tr> 
+            <td>{{number}}</td> 
+            <td>{{name}}</td> 
+            <td>{{isInternational}}</td> 
+            <td>{{collegeId}}</td>
+            <td>{{balance}}</td>
+            <td><button onclick="deleteStudent({{number}})">Delete</button></td>
+            <td><a href="/students/{{number}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table>
+</html>

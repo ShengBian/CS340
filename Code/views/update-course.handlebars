@@ -1,0 +1,10 @@
+<html>
+<h1>Update Course {{course.name}} :</h1>
+<form id="update-course" action="/courses" method="post">
+    courseCode: <input type="test" name="courseCode" value="{{course.courseCode}}"><br><br>
+    name: <input type="text" name="name" value="{{course.name}}"><br><br>
+    hours: <input type="number" name="hours" value="{{course.hours}}"><br><br>
+    credits: <input type="number" name="credits" value="{{course.credits}}"><br><br>
+</form>
+<button onclick="updateCourse('{{course.courseCode}}')">Update</button>
+</html>

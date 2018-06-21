@@ -1,0 +1,41 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<h3>Add new person:</h3>
+<form id="addperson" action="/people" method="post">
+    Number: <input type="number" name="number"><br><br>
+    Last name: <input type="text" name="lastName"><br><br>
+    First name: <input type="text" name="firstName"><br><br>
+    Phone Number: <input type="text" name="phoneNumber"><br><br>
+    Email: <input type="text" name="email"><br><br>
+    Birth Date: <input type="date" name="birthdate"><br><br>
+    <input type="submit" value="Submit">
+ </form>
+<br/>
+<h3>Current people:</h3>
+<table>
+    <thead> 
+        <th>Number</th> 
+        <th>Last Name</th> 
+        <th>First Name</th>   
+        <th>Phone Number</th>
+        <th>Email</th>  
+        <th>Birth Date</th>
+    </thead> 
+    <tbody> 
+        {{#each people}} 
+        <tr> 
+            <td>{{number}}</td> 
+            <td>{{lastName}}</td> 
+            <td>{{firstName}}</td> 
+            <td>{{phoneNumber}}</td>
+            <td>{{email}}</td>
+            <td>{{birthdate}}</td>
+            <td><button onclick="deletePerson({{number}})">Delete</button></td>
+            <td><a href="/people/{{number}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>
