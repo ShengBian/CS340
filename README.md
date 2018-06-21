@@ -1,2 +1,2 @@
-# CS340
-My coursework for CS340 at Oregon State University
+# CS340 – Introduction to Databases
+Design and implementation of relational databases, including data modeling with ER or UML, diagrams, relational schema, SQL queries, relational algebra, user interfaces, and administration.
